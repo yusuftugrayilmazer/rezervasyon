@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YUS-HUB - Mersin'in Lezzet Durağı</title>
+    <meta name="description" content="YUS-HUB Gastronomi Dünyası — 2006'dan beri Mersin'de Akdeniz ve Toros yöresinin en özel lezzetleri. Masa rezervasyonu ve online sipariş.">
+    <meta name="theme-color" content="#8c321d">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="YUS-HUB - Mersin'in Lezzet Durağı">
+    <meta property="og:description" content="2006'dan beri Akdeniz ve Toros yöresinin lezzetleri. Masa rezervasyonu ve online sipariş.">
+    <meta property="og:image" content="logo.jpg">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,700;1,900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Üst Menü -->
+    <header class="navbar">
+        <a href="#" class="logo-container">
+            <img src="logo.jpg" alt="YUS-HUB Logo" class="navbar-logo-img">
+            <div class="logo-text-group">
+                <span class="logo-text">YUS-HUB</span>
+                <span class="logo-subtext">GASTRONOMİ DÜNYASI</span>
+            </div>
+        </a>
+        <nav>
+            <a href="#services">Masa Rezervasyonu</a>
+            <a href="#menu" class="menu-nav-btn">Yemek Menüsü</a>
+            <a href="#about">Hakkımızda</a>
+            <a href="#contact">İletişim</a>
+            <button type="button" class="nav-cart-btn" onclick="openCartModal()">
+                <span>🛒 Sepetim</span>
+                <span class="cart-badge-pill" id="nav-cart-count">0</span>
+            </button>
+            <button type="button" class="nav-cart-btn nav-orders-btn" onclick="openOrdersModal()">
+                <span>📋 Siparişlerim</span>
+                <span class="cart-badge-pill" id="nav-orders-count">0</span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Giriş Bölümü -->
+    <section class="hero">
+        <div class="hero-overlay">
+            <h1 class="styled-hero-title">
+                <span class="title-top">RESTORANIMIZA</span>
+                <span class="title-bottom">HOŞ GELDİNİZ</span>
+            </h1>
+            <div class="hero-divider">✦ ✦ ✦</div>
+            <p>Unutulmaz lezzetler ve büyüleyici bir atmosferde masanız sizi bekliyor.</p>
+        </div>
+    </section>
+
+    <!-- Rezervasyon Bölümü -->
+    <section id="services" class="booking-section">
+        <h2 class="main-booking-title">Masa Rezervasyonu</h2>
+        
+        <!-- Kat Butonları -->
+        <div class="floor-buttons">
+            <button class="btn active" onclick="switchFloor(1)">
+                <span class="btn-title">1. Kat</span>
+            </button>
+            <button class="btn" onclick="switchFloor(2)">
+                <span class="btn-title">2. Kat</span>
+            </button>
+        </div>
+
+        <div class="restaurant-map">
+            <!-- 1. Kat Görsel Tabanlı İnteraktif Kroki -->
+            <div id="floor-1" class="floor-image-container">
+                <div class="image-crop-wrapper">
+                    <div class="map-header-overlay">
+                        <span class="floor-indicator">1. KAT MASA DÜZENİ</span>
+                    </div>
+
+                    <img src="kat1plan_2.jpg" alt="1. Kat Masa Planı" class="floor-plan-img" width="1024" height="559">
+                    
+                    <!-- 1. Kat Masaları -->
+                    <div class="table-hotspot" data-table="Masa 1" style="top: 12%; left: 9%; width: 20%; height: 34%;" onclick="openModal('Masa 1')" title="Masa 1">
+                        <button type="button" class="table-btn">Rezerve Et</button>
+                    </div>
+                    <div class="table-hotspot" data-table="Masa 2" style="top: 12%; left: 40%; width: 20%; height: 34%;" onclick="openModal('Masa 2')" title="Masa 2">
+                        <button type="button" class="table-btn">Rezerve Et</button>
+                    </div>
+                    <div class="table-hotspot" data-table="Masa 3" style="top: 12%; left: 71%; width: 20%; height: 34%;" onclick="openModal('Masa 3')" title="Masa 3">
+                        <button type="button" class="table-btn">Rezerve Et</button>
+                    </div>
+                    
+                    <div class="table-hotspot" data-table="Masa 4" style="top: 52%; left: 9%; width: 20%; height: 34%;" onclick="openModal('Masa 4')" title="Masa 4">
+                        <button type="button" class="table-btn">Rezerve Et</button>
+                    </div>
+                    <div class="table-hotspot" data-table="Masa 5" style="top: 52%; left: 40%; width: 20%; height: 34%;" onclick="openModal('Masa 5')" title="Masa 5">
+                        <button type="button" class="table-btn">Rezerve Et</button>
+                    </div>
+                    <div class="table-hotspot" data-table="Masa 6" style="top: 52%; left: 71%; width: 20%; height: 34%;" onclick="openModal('Masa 6')" title="Masa 6">
+                        <button type="button" class="table-btn">Rezerve Et</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Kat Görsel Tabanlı İnteraktif Kroki (Yeni Görsel Entegre Edildi) -->
+            <div id="floor-2" class="floor-image-container hidden">
+                <div class="image-crop-wrapper">
+                    <div class="map-header-overlay">
+                        <span class="floor-indicator">2. KAT MASA DÜZENİ</span>
+                    </div>
+
+                    <img src="kat2plan_3_2.jpg" alt="2. Kat Masa Planı" class="floor-plan-img" width="1024" height="415">
+                    
+                    <!-- 2. Kat Görselindeki Masa Konumlarına Tam Oturan Hotspotlar (Masa 7 - 15) -->
+                    <div class="table-hotspot" data-table="Masa 7" style="top: 14%; left: 11%; width: 15%; height: 20%;" onclick="openModal('Masa 7')" title="Masa 7">
+                        <button type="button" class="table-btn">Rezerve Et</button>
+                    </div>
+                    <div class="table-hotspot" data-table="Masa 8" style="top: 14%; left: 42.5%; width: 15%; height: 20%;" onclick="openModal('Masa 8')" title="Masa 8">
+                        <button type="button" class="table-btn">Rezerve Et</button>
+                    </div>
+                    <div class="table-hotspot" data-table="Masa 9" style="top: 14%; left: 74%; width: 15%; height: 20%;" onclick="openModal('Masa 9')" title="Masa 9">
+                        <button type="button" class="table-btn">Rezerve Et</button>
+                    </div>
+                    
+                    <div class="table-hotspot" data-table="Masa 10" style="top: 42%; left: 11%; width: 15%; height: 20%;" onclick="openModal('Masa 10')" title="Masa 10">
+                        <button type="button" class="table-btn">Rezerve Et</button>
+                    </div>
+                    <div class="table-hotspot" data-table="Masa 11" style="top: 42%; left: 42.5%; width: 15%; height: 20%;" onclick="openModal('Masa 11')" title="Masa 11">
+                        <button type="button" class="table-btn">Rezerve Et</button>
+                    </div>
+                    <div class="table-hotspot" data-table="Masa 12" style="top: 42%; left: 74%; width: 15%; height: 20%;" onclick="openModal('Masa 12')" title="Masa 12">
+                        <button type="button" class="table-btn">Rezerve Et</button>
+                    </div>
+                    
+                    <div class="table-hotspot" data-table="Masa 13" style="top: 70%; left: 11%; width: 15%; height: 20%;" onclick="openModal('Masa 13')" title="Masa 13">
+                        <button type="button" class="table-btn">Rezerve Et</button>
+                    </div>
+                    <div class="table-hotspot" data-table="Masa 14" style="top: 70%; left: 42.5%; width: 15%; height: 20%;" onclick="openModal('Masa 14')" title="Masa 14">
+                        <button type="button" class="table-btn">Rezerve Et</button>
+                    </div>
+                    <div class="table-hotspot" data-table="Masa 15" style="top: 70%; left: 74%; width: 15%; height: 20%;" onclick="openModal('Masa 15')" title="Masa 15">
+                        <button type="button" class="table-btn">Rezerve Et</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="reservation-status-bar" class="reservation-status-bar hidden"></div>
+
+        <div class="bon-appetit-container">
+            <span class="bon-appetit-text">AFİYET OLSUN</span>
+        </div>
+    </section>
+
+    <!-- Yemek Menüsü Bölümü (Akdeniz & Yöresel Gurme Menü) -->
+    <section id="menu" class="menu-section">
+        <div class="menu-container">
+            <div class="menu-section-header">
+                <h2 class="menu-main-title">Seçkin Akdeniz Lezzetleri</h2>
+                <div class="menu-gold-divider">✦ ✦ ✦</div>
+                <p class="menu-desc">Mersin kıyılarından Toros yaylalarına uzanan eşsiz gurme reçeteler</p>
+            </div>
+
+            <!-- Kategori Filtre Butonları -->
+            <div class="menu-category-tabs">
+                <button type="button" class="menu-tab-btn active" onclick="filterMenu('all', this)">Tümü</button>
+                <button type="button" class="menu-tab-btn" onclick="filterMenu('soguk', this)">❄️ Soğuk Mezeler & Başlangıçlar</button>
+                <button type="button" class="menu-tab-btn" onclick="filterMenu('sicak', this)">🔥 Sıcak Akdeniz Başlangıçları</button>
+                <button type="button" class="menu-tab-btn" onclick="filterMenu('ana-yemek', this)">🐟 Ana Yemekler & Deniz Mahsulleri</button>
+                <button type="button" class="menu-tab-btn" onclick="filterMenu('tatli', this)">🍰 Yöresel & Akdeniz Tatlıları</button>
+            </div>
+
+            <!-- Yemek Listesi (Grid) -->
+            <div class="menu-search-row">
+                <input type="text" id="menu-search" class="menu-search-input" placeholder="🔍 Menüde ara... (ör. karides, künefe, humus)" oninput="searchMenu(this.value)">
+            </div>
+            <div class="menu-items-grid" id="menu-items-container">
+<div class="menu-item-card" data-category="soguk" data-id="m-1">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-1.jpg" alt="Toros Yayık Tereyağlı Humus &amp; Çıtır Pastırma" class="menu-item-img" loading="lazy">
+        <span class="menu-item-badge signature">Şefin İmzası</span>
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">Toros Yayık Tereyağlı Humus &amp; Çıtır Pastırma</h3>
+        <p class="menu-item-desc">Tarsus taş değirmen tahini, Toros yayık tereyağında sotelenmiş çıtır pastırma dilimleri, çam fıstığı ve taze kimyon.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">500 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-1', 'Toros Yayık Tereyağlı Humus &amp; Çıtır Pastırma', 500, 'images/m-1.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="soguk" data-id="m-2">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-2.jpg" alt="Narenciyeli Mersin Kaya Levreği Marin" class="menu-item-img" loading="lazy">
+        <span class="menu-item-badge">Popüler</span>
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">Narenciyeli Mersin Kaya Levreği Marin</h3>
+        <p class="menu-item-desc">Tarsus turunçları ve lime ile soğuk marine edilmiş taze levrek, pembe tane karabiber, bebek kapari ve Mut sızma zeytinyağı.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">620 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-2', 'Narenciyeli Mersin Kaya Levreği Marin', 620, 'images/m-2.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="soguk" data-id="m-3">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-3.jpg" alt="Girit Kabağı Carpaccio &amp; Burrata Peyniri" class="menu-item-img" loading="lazy">
+        
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">Girit Kabağı Carpaccio &amp; Burrata Peyniri</h3>
+        <p class="menu-item-desc">İncecik dilimlenmiş organik Girit kabağı, taze İtalyan Burrata peyniri, kavrulmuş çam fıstığı, taze nane ve balzamik glaze.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">570 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-3', 'Girit Kabağı Carpaccio &amp; Burrata Peyniri', 570, 'images/m-3.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="soguk" data-id="m-4">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-4.jpg" alt="Köz Patlıcanlı Babagannuş &amp; Nar Glaze" class="menu-item-img" loading="lazy">
+        
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">Köz Patlıcanlı Babagannuş &amp; Nar Glaze</h3>
+        <p class="menu-item-desc">Meşe kömüründe tütsülenmiş Mersin patlıcanı, köz sarımsak, sızma zeytinyağı, ceviz ve geleneksel odun ateşi nar ekşisi.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">460 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-4', 'Köz Patlıcanlı Babagannuş &amp; Nar Glaze', 460, 'images/m-4.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="soguk" data-id="m-5">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-5.jpg" alt="Deniz Börülcesi &amp; Narenciyeli Somon Gravlaks" class="menu-item-img" loading="lazy">
+        <span class="menu-item-badge">Özel</span>
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">Deniz Börülcesi &amp; Narenciyeli Somon Gravlaks</h3>
+        <p class="menu-item-desc">Akdeniz kıyılarından taze deniz börülcesi, narenciye kürü ile dinlendirilmiş somon dilimleri, sarımsaklı limon sosu ve ekşi maya kıtırı.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">640 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-5', 'Deniz Börülcesi &amp; Narenciyeli Somon Gravlaks', 640, 'images/m-5.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="soguk" data-id="m-6">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-6.jpg" alt="Girit Ezmesi &amp; Taze Fesleğenli Pesto" class="menu-item-img" loading="lazy">
+        
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">Girit Ezmesi &amp; Taze Fesleğenli Pesto</h3>
+        <p class="menu-item-desc">Ezine koyun peyniri, taze lor, Antep fıstığı, Akdeniz fesleğeninden cevizli ev yapımı pesto ve Silifke sızma zeytinyağı.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">430 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-6', 'Girit Ezmesi &amp; Taze Fesleğenli Pesto', 430, 'images/m-6.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="soguk" data-id="m-7">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-7.jpg" alt="Trüflü Urla Enginar Kalbi &amp; Avokado Tartar" class="menu-item-img" loading="lazy">
+        <span class="menu-item-badge">Yeni</span>
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">Trüflü Urla Enginar Kalbi &amp; Avokado Tartar</h3>
+        <p class="menu-item-desc">Taze Urla sakız enginar kalbi, olgun avokado küpleri, trüf mantarı yağı, hardallı narenciye sosu ve nar taneleri.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">520 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-7', 'Trüflü Urla Enginar Kalbi &amp; Avokado Tartar', 520, 'images/m-7.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="soguk" data-id="m-8">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-8.jpg" alt="İsli Çerkes Peynirli Atom &amp; Karamelize Ceviz" class="menu-item-img" loading="lazy">
+        
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">İsli Çerkes Peynirli Atom &amp; Karamelize Ceviz</h3>
+        <p class="menu-item-desc">Süzme Toros yoğurdu, tereyağında hafifçe kavrulmuş kurutulmuş arnavut biberi, isli peynir kırıntıları ve ceviz.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">440 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-8', 'İsli Çerkes Peynirli Atom &amp; Karamelize Ceviz', 440, 'images/m-8.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="sicak" data-id="m-9">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-9.jpg" alt="Taşucu Jumbo Karides &amp; Sarımsaklı Tereyağı" class="menu-item-img" loading="lazy">
+        <span class="menu-item-badge signature">Şefin İmzası</span>
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">Taşucu Jumbo Karides &amp; Sarımsaklı Tereyağı</h3>
+        <p class="menu-item-desc">Akdeniz açıklarından günlük jumbo karides, güveçte Toros köy tereyağı, sarımsak, tatlı arpacık soğan ve taze dağ kekiği.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">760 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-9', 'Taşucu Jumbo Karides &amp; Sarımsaklı Tereyağı', 760, 'images/m-9.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="sicak" data-id="m-10">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-10.jpg" alt="Kömür Ateşinde Akdeniz Ahtapotu &amp; Fava" class="menu-item-img" loading="lazy">
+        <span class="menu-item-badge">Popüler</span>
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">Kömür Ateşinde Akdeniz Ahtapotu &amp; Fava</h3>
+        <p class="menu-item-desc">Kömür ızgarasında tütsülenmiş dinlendirilmiş ahtapot kolu, zeytinyağlı ipeksi fava, kurutulmuş domates ve kapari emülsiyonu.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">820 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-10', 'Kömür Ateşinde Akdeniz Ahtapotu &amp; Fava', 820, 'images/m-10.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="sicak" data-id="m-11">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-11.jpg" alt="Çıtır Akdeniz Kalamarı &amp; Mürekkepli Tarator" class="menu-item-img" loading="lazy">
+        
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">Çıtır Akdeniz Kalamarı &amp; Mürekkepli Tarator</h3>
+        <p class="menu-item-desc">Ege usulü hafif paneli çıtır kalamar halkaları, cevizli ev yapımı kalamar mürekkepli tarator dip sos ve taze lime dilimi.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">690 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-11', 'Çıtır Akdeniz Kalamarı &amp; Mürekkepli Tarator', 690, 'images/m-11.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="sicak" data-id="m-12">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-12.jpg" alt="Fırınlanmış Sıcak Humus &amp; Pastırma Dilimleri" class="menu-item-img" loading="lazy">
+        
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">Fırınlanmış Sıcak Humus &amp; Pastırma Dilimleri</h3>
+        <p class="menu-item-desc">Fırınlanmış sıcak güveç humusu üzerinde tereyağlı çıtır pastırma dilimleri, kavrulmuş çam fıstığı ve taze biberiye.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">550 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-12', 'Fırınlanmış Sıcak Humus &amp; Pastırma Dilimleri', 550, 'images/m-12.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="sicak" data-id="m-13">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-13.jpg" alt="Akdeniz Kum Midyesi &amp; Kabuklular Sote" class="menu-item-img" loading="lazy">
+        <span class="menu-item-badge">Özel</span>
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">Akdeniz Kum Midyesi &amp; Kabuklular Sote</h3>
+        <p class="menu-item-desc">Sarımsaklı zeytinyağında taze Akdeniz kum midyeleri, çeri domates, taze fesleğen ve çıtır sarımsaklı bruschetta ekmeği.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">620 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-13', 'Akdeniz Kum Midyesi &amp; Kabuklular Sote', 620, 'images/m-13.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="sicak" data-id="m-14">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-14.jpg" alt="Kömürde Hellim Izgara &amp; İncir Glaze" class="menu-item-img" loading="lazy">
+        
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">Kömürde Hellim Izgara &amp; İncir Glaze</h3>
+        <p class="menu-item-desc">Zeytin ağacı kömüründe ızgara Kıbrıs hellim peyniri, fırınlanmış kekikli incir ezmesi, ceviz ve çıtır roka filizleri.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">500 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-14', 'Kömürde Hellim Izgara &amp; İncir Glaze', 500, 'images/m-14.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="sicak" data-id="m-15">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-15.jpg" alt="Porçini Mantarlı &amp; Trüf Yağlı Ravioli" class="menu-item-img" loading="lazy">
+        <span class="menu-item-badge">Yeni</span>
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">Porçini Mantarlı &amp; Trüf Yağlı Ravioli</h3>
+        <p class="menu-item-desc">El açması taze hamur, Toros yabani porçini dolgusu, adaçaylı fındık tereyağı sosu ve rendelenmiş eski kaşar.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">580 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-15', 'Porçini Mantarlı &amp; Trüf Yağlı Ravioli', 580, 'images/m-15.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="sicak" data-id="m-16">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-16.jpg" alt="Güveçte Kaşarlı Bebek Kalamar &amp; Çeri Domates" class="menu-item-img" loading="lazy">
+        
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">Güveçte Kaşarlı Bebek Kalamar &amp; Çeri Domates</h3>
+        <p class="menu-item-desc">Toprak güveçte sotelenmiş bebek kalamarlar, sarımsak, çeri domatesler, taze fesleğen ve fırınlanmış eritme kaşar peyniri.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">660 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-16', 'Güveçte Kaşarlı Bebek Kalamar &amp; Çeri Domates', 660, 'images/m-16.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="ana-yemek" data-id="m-17">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-17.jpg" alt="Izgara Akdeniz Lagos Balığı (Grida)" class="menu-item-img" loading="lazy">
+        <span class="menu-item-badge signature">Şefin İmzası</span>
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">Izgara Akdeniz Lagos Balığı (Grida)</h3>
+        <p class="menu-item-desc">Mersin körfezinin en seçkin lezzeti taze lagos fileto, sote bebek patatesler, Ege otları, közlenmiş enginar kalbi ve limon kapari sos.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">1.150 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-17', 'Izgara Akdeniz Lagos Balığı (Grida)', 1150, 'images/m-17.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="ana-yemek" data-id="m-18">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-18.jpg" alt="Kaya Levreği Buğulama (Akdeniz Usulü)" class="menu-item-img" loading="lazy">
+        <span class="menu-item-badge">Popüler</span>
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">Kaya Levreği Buğulama (Akdeniz Usulü)</h3>
+        <p class="menu-item-desc">Taş fırında deniz levreği, safranlı balık suyu, arpacık soğan, çeri domates, taze fesleğen, kapari ve taze sarımsak taneleri.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">1.050 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-18', 'Kaya Levreği Buğulama (Akdeniz Usulü)', 1050, 'images/m-18.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="ana-yemek" data-id="m-19">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-19.jpg" alt="Tarsus Kuzu İncik &amp; İsli Patlıcan Beğendi" class="menu-item-img" loading="lazy">
+        <span class="menu-item-badge signature">Özel Spesiyal</span>
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">Tarsus Kuzu İncik &amp; İsli Patlıcan Beğendi</h3>
+        <p class="menu-item-desc">Toros yaylalarından kuzu incik (8 saat ağır ateşte fırınlanmış), köz kokulu ipeksi beğendi, kemik iliği sosu ve taze dağ kekiği.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">1.050 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-19', 'Tarsus Kuzu İncik &amp; İsli Patlıcan Beğendi', 1050, 'images/m-19.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="ana-yemek" data-id="m-20">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-20.jpg" alt="YUS-HUB Gurme Mersin Tantuni (Dana Bonfile)" class="menu-item-img" loading="lazy">
+        <span class="menu-item-badge">Yöresel Lezzet</span>
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">YUS-HUB Gurme Mersin Tantuni (Dana Bonfile)</h3>
+        <p class="menu-item-desc">Dinlendirilmiş dana bonfile küpleri, pamuk yağı ve tereyağında bakır sacta sotelenmiş, köz biber, sumaklı maydanozlu soğan ve sıcak lavaş ile.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">880 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-20', 'YUS-HUB Gurme Mersin Tantuni (Dana Bonfile)', 880, 'images/m-20.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="ana-yemek" data-id="m-21">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-21.jpg" alt="Dry-Aged Dana Pirzola (Akdeniz Biberiyeli 400g)" class="menu-item-img" loading="lazy">
+        <span class="menu-item-badge">Premium</span>
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">Dry-Aged Dana Pirzola (Akdeniz Biberiyeli 400g)</h3>
+        <p class="menu-item-desc">28 gün dinlendirilmiş dana pirzola, köz sarımsak, taze biberiye yağı, trüflü patates püresi ve fırınlanmış kök sebzeler.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">1.350 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-21', 'Dry-Aged Dana Pirzola (Akdeniz Biberiyeli 400g)', 1350, 'images/m-21.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="ana-yemek" data-id="m-22">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-22.jpg" alt="Safranlı Deniz Mahsulleri Risotto" class="menu-item-img" loading="lazy">
+        
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">Safranlı Deniz Mahsulleri Risotto</h3>
+        <p class="menu-item-desc">Taşucu jumbo karides, kalamar, ahtapot ve taze midye ile hazırlanan safranlı Arborio pirinci ve fesleğenli zeytinyağı dokunuşu.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">990 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-22', 'Safranlı Deniz Mahsulleri Risotto', 990, 'images/m-22.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="ana-yemek" data-id="m-23">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-23.jpg" alt="Zırh Kuzu Kebabı &amp; Köz Akdeniz Sebzeleri" class="menu-item-img" loading="lazy">
+        
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">Zırh Kuzu Kebabı &amp; Köz Akdeniz Sebzeleri</h3>
+        <p class="menu-item-desc">Zırhla elde kıyılmış kuzu boşluğu, Antep fıstığı, közlenmiş kapya biber, tereyağlı bazlama ekmeği ve sumaklı taze soğan piyazı.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">920 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-23', 'Zırh Kuzu Kebabı &amp; Köz Akdeniz Sebzeleri', 920, 'images/m-23.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="ana-yemek" data-id="m-24">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-24.jpg" alt="Fırın Somon Fileto &amp; Kuşkonmazlı Püre" class="menu-item-img" loading="lazy">
+        <span class="menu-item-badge">Yeni</span>
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">Fırın Somon Fileto &amp; Kuşkonmazlı Püre</h3>
+        <p class="menu-item-desc">Çıtır derili somon fileto, kremalı patates püresi, ızgara kuşkonmaz filizleri, taze dereotu ve limonlu tereyağı emülsiyonu.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">1.020 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-24', 'Fırın Somon Fileto &amp; Kuşkonmazlı Püre', 1020, 'images/m-24.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="ana-yemek" data-id="m-25">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-25.jpg" alt="Dana Kaburga (12 Saat Konfi) &amp; Demi-Glace" class="menu-item-img" loading="lazy">
+        <span class="menu-item-badge">Premium</span>
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">Dana Kaburga (12 Saat Konfi) &amp; Demi-Glace</h3>
+        <p class="menu-item-desc">Ağır ateşte 12 saat kök sebzelerle fırınlanmış dana kaburga, trüflü kereviz püresi, karamelize soğan ve zengin kemik iliği sosu.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">1.120 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-25', 'Dana Kaburga (12 Saat Konfi) &amp; Demi-Glace', 1120, 'images/m-25.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="tatli" data-id="m-26">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-26.jpg" alt="Mersin Kerebiçi &amp; Çöven Otu Köpüğü" class="menu-item-img" loading="lazy">
+        <span class="menu-item-badge signature">Yöresel Spesiyal</span>
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">Mersin Kerebiçi &amp; Çöven Otu Köpüğü</h3>
+        <p class="menu-item-desc">Yöresel çıtır irmik hamuru içerisinde bol Antep fıstığı, yanında geleneksel hafif çöven otu köpüğü ve tarçın serpintisi.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">450 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-26', 'Mersin Kerebiçi &amp; Çöven Otu Köpüğü', 450, 'images/m-26.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="tatli" data-id="m-27">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-27.jpg" alt="Közde Çıtır Hatay Künefesi &amp; Kaymak" class="menu-item-img" loading="lazy">
+        <span class="menu-item-badge signature">Şefin İmzası</span>
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">Közde Çıtır Hatay Künefesi &amp; Kaymak</h3>
+        <p class="menu-item-desc">Bakır tepsilerde köz ateşinde pişirilmiş uzayan Hatay peyniri, çıtır tel kadayıf, bol boz fıstık ve hakiki Maraş kesme dondurması.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">500 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-27', 'Közde Çıtır Hatay Künefesi &amp; Kaymak', 500, 'images/m-27.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="tatli" data-id="m-28">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-28.jpg" alt="Narenciyeli Akdeniz Suflesi &amp; Dondurma" class="menu-item-img" loading="lazy">
+        <span class="menu-item-badge">Popüler</span>
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">Narenciyeli Akdeniz Suflesi &amp; Dondurma</h3>
+        <p class="menu-item-desc">%70 Callebaut bitter Belçika çikolatası, Tarsus portakalı ve Bodrum mandalinası aroması ile akışkan sıcak sufle ve dondurma.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">460 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-28', 'Narenciyeli Akdeniz Suflesi &amp; Dondurma', 460, 'images/m-28.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="tatli" data-id="m-29">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-29.jpg" alt="Fırınlanmış Mut İncir Tatlısı &amp; Toros Kaymağı" class="menu-item-img" loading="lazy">
+        
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">Fırınlanmış Mut İncir Tatlısı &amp; Toros Kaymağı</h3>
+        <p class="menu-item-desc">Mut yöresinin organik kuru incirleri, karanfilli tarçın şerbetinde fırınlanmış ceviz içi ve taze koyun sütü yayla kaymağı.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">400 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-29', 'Fırınlanmış Mut İncir Tatlısı &amp; Toros Kaymağı', 400, 'images/m-29.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="tatli" data-id="m-30">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-30.jpg" alt="San Sebastian &amp; Sıcak Portakallı Çikolata" class="menu-item-img" loading="lazy">
+        
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">San Sebastian &amp; Sıcak Portakallı Çikolata</h3>
+        <p class="menu-item-desc">İpeksi dokuda fırınlanmış karamelize İspanyol cheesecake, portakal kabuğu aromalı sıcak eritilmiş Belçika sütlü çikolatası.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">430 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-30', 'San Sebastian &amp; Sıcak Portakallı Çikolata', 430, 'images/m-30.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="tatli" data-id="m-31">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-31.jpg" alt="Limon Çiçekli İtalyan Tiramisu" class="menu-item-img" loading="lazy">
+        
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">Limon Çiçekli İtalyan Tiramisu</h3>
+        <p class="menu-item-desc">Hakiki Mascarpone kreması, Akdeniz limon çiçeği esansı ve espresso ile ıslatılmış savoiardi kedidili, saf Valrhona kakao tozu.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">420 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-31', 'Limon Çiçekli İtalyan Tiramisu', 420, 'images/m-31.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="tatli" data-id="m-32">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-32.jpg" alt="Çıtır Fıstıklı Katmer &amp; Maraş Dondurması" class="menu-item-img" loading="lazy">
+        <span class="menu-item-badge">Özel</span>
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">Çıtır Fıstıklı Katmer &amp; Maraş Dondurması</h3>
+        <p class="menu-item-desc">İncecik el açması baklava yufkası, taze manda kaymağı, bol boz fıstık ve hakiki Maraş kesme dondurması dilimi.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">490 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-32', 'Çıtır Fıstıklı Katmer &amp; Maraş Dondurması', 490, 'images/m-32.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-item-card" data-category="tatli" data-id="m-33">
+    <div class="menu-item-img-wrapper">
+        <img src="images/m-33.jpg" alt="Fırın Sütlaç (Mersin Narenciyeli &amp; Fındıklı)" class="menu-item-img" loading="lazy">
+        
+    </div>
+    <div class="menu-item-info">
+        <h3 class="menu-item-title">Fırın Sütlaç (Mersin Narenciyeli &amp; Fındıklı)</h3>
+        <p class="menu-item-desc">Toprak güveçte nar gibi fırınlanmış organik sütlaç, hafif Mersin portakal kabuğu aroması ve kavrulmuş Giresun fındığı.</p>
+        <div class="menu-item-bottom">
+            <span class="menu-item-price">370 ₺</span>
+            <button type="button" class="btn-add-to-cart" onclick="addToCart('m-33', 'Fırın Sütlaç (Mersin Narenciyeli &amp; Fındıklı)', 370, 'images/m-33.jpg')">
+                <span>🛒 Sepete Ekle</span>
+            </button>
+        </div>
+    </div>
+</div>
+</div>
+
+            <div class="menu-section-footer">
+                <span>✦ Tüm ürünlerimizde günlük taze deniz mahsulleri ve organik Akdeniz / Toros yöresi malzemeleri kullanılmaktadır. ✦</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hakkımızda Bölümü -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="badge">2006'dan Beri Hizmetinizde</div>
+            <h2>Aşkla İşlenen Lezzet, Tutkuyla Hazırlanan Sofralar</h2>
+            
+            <p class="lead-text">
+                2006 yılından bu yana Akdeniz'in incisi Mersin'de, Akdeniz ve Toros yöresinin en özel lezzetlerini misafirlerimizle buluşturuyoruz.
+            </p>
+            
+            <div class="about-text-content">
+                <p>
+                    2006 yılında samimi bir mutfakta başlayan yolculuğumuz, bugün Akdeniz mutfağının en özgün tatlarını aynı tutkuyla sunan bir gastronomi durağına dönüştü. Yaklaşık yirmi yıldır; taze deniz mahsulleri, Toros yaylalarının otları, Mersin'in mis kokulu narenciyeleri ve yöresel reçeteleri en iyi şekilde yorumluyoruz.
+                </p>
+                <p>
+                    Mutfağımızda kullandığımız her malzemeyi mevsiminde ve yerel üreticilerden özenle seçiyor; Akdeniz yöresine ait lezzetleri günlük taze ürünlerle tabağınıza taşıyoruz. Usta şeflerimizin maharetli ellerinden çıkan reçeteler; ister ailenizle keyifli bir akşam yemeği, ister özel davet ve kutlamalarınız için olsun, iki katlı ferah atmosferimizle sizleri ağırlıyor.
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌿</div>
+                    <h3>Taze & Doğal Malzemeler</h3>
+                    <p>Yerel çiftçilerden ve güvenilir tedarikçilerden günlük olarak temin edilen en kaliteli ürünler.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍🍳</div>
+                    <h3>Usta Şef Kadrosu</h3>
+                    <p>Gastronomi alanında tecrübeli şeflerimizin yaratıcılığı ve ustalığıyla hazırlanan gurme tarifler.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3>Ayrıcalıklı Atmosfer</h3>
+                    <p>Göz alıcı iç mimari, konforlu masa düzeni ve huzur veren ambiyans ile eşsiz bir deneyim.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rezervasyon Modalı -->
+    <div id="booking-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3 id="modal-title">Masa Seçimi</h3>
+            
+            <div id="notificationArea" class="hidden notification-card"></div>
+
+            <div id="step-time">
+                <p>Lütfen rezervasyon tarihi ve saati seçin:</p>
+                <div class="form-group">
+                    <label for="booking-date">Tarih</label>
+                    <input type="date" id="booking-date" onchange="onBookingDateChange()">
+                    <span class="date-limit-note" id="date-limit-note"></span>
+                </div>
+                <div class="time-slots" id="time-slots-container"></div>
+                <div id="table-cancel-area"></div>
+            </div>
+
+            <div id="step-details" class="hidden">
+                <p id="selected-summary-info" class="selected-summary-text"></p>
+                <form id="reservation-form" onsubmit="handleFormSubmit(event)">
+                    <div class="form-group">
+                        <label for="cust-name">Ad Soyad</label>
+                        <input type="text" id="cust-name" required placeholder="Ahmet Yılmaz">
+                    </div>
+                    <div class="form-group">
+                        <label for="cust-phone">Telefon Numarası (11 Haneli)</label>
+                        <input type="tel" id="cust-phone" maxlength="11" pattern="[0-9]{11}" required placeholder="05XXXXXXXXX">
+                        <span id="phone-error-msg" class="error-msg hidden">⚠️ Lütfen tam 11 rakamdan oluşan bir telefon numarası giriniz (Örn: 05551234567).</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="cust-guests">Kişi Sayısı</label>
+                        <select id="cust-guests" required></select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cust-notes">Özel İstek / Not (Opsiyonel)</label>
+                        <input type="text" id="cust-notes" placeholder="Pencere kenarı, doğum günü vb.">
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn-back" onclick="resetModalSteps()">Geri</button>
+                        <button type="submit" class="btn-submit">Rezervasyonu Onayla</button>
+                    </div>
+                </form>
+            </div>
+
+            <p class="modal-info-note">⚠️ Rezervasyonunuzu son 1 saat kala iptal edebilirsiniz. Afiyet olsun!</p>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         SEPET & ONLINE ÖDEME EKRANI (CHECKOUT MODAL)
+         ========================================== -->
+    <div id="checkout-modal" class="modal hidden">
+        <div class="modal-content checkout-modal-content">
+            <span class="close-btn" onclick="closeCartModal()">&times;</span>
+            
+            <div class="checkout-header">
+                <div class="checkout-pre-title">YUS-HUB GASTRONOMİ</div>
+                <h2 class="checkout-main-title">Sipariş & Ödeme Ekranı</h2>
+                <div class="checkout-gold-divider">✦ ✦ ✦</div>
+            </div>
+
+            <!-- Adım Göstergesi -->
+            <div class="checkout-steps-bar" id="checkout-steps-bar">
+                <div class="step-badge active" id="badge-step-1">1. Sepet & Bilgiler</div>
+                <div class="step-arrow">→</div>
+                <div class="step-badge" id="badge-step-2">2. Sipariş Onayı</div>
+            </div>
+
+            <!-- 1. & 2. ADIM: SİPARİŞLER ÜSTTE, BİLGİLER ALTTA (TEK SÜTUN) -->
+            <div class="checkout-grid-container" id="checkout-main-container">
+                <!-- Siparişleriniz (Üstte) -->
+                <div class="checkout-cart-col">
+                    <div class="cart-col-header">
+                        <h3>🛒 Siparişleriniz (<span id="cart-total-items-qty">0</span>)</h3>
+                        <button type="button" class="btn-clear-cart" onclick="clearCart()">Sepeti Temizle</button>
+                    </div>
+
+                    <div class="cart-items-list" id="cart-items-list">
+                        <!-- JS dinamik dolduracak -->
+                    </div>
+
+                    <div class="cart-price-summary">
+                        <div class="summary-line">
+                            <span>Ara Toplam:</span>
+                            <span id="summary-subtotal">0 ₺</span>
+                        </div>
+                        <div class="summary-line total-line">
+                            <span>Genel Toplam:</span>
+                            <span id="summary-grand-total">0 ₺</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bilgi Formu: Rezervasyon / Müşteri / Ödeme (Siparişlerin altında) -->
+                <div class="checkout-form-col">
+                    <form id="checkout-payment-form" onsubmit="handleCheckoutSubmit(event)">
+                        <div class="form-section-title">📍 Rezervasyon Bilgileri</div>
+                        <div class="form-group hidden" id="checkout-table-select-group">
+                            <label for="checkout-table-select">Sipariş Verilecek Masa</label>
+                            <select id="checkout-table-select" onchange="onCheckoutTableChange()"></select>
+                        </div>
+                        <div id="checkout-reservation-banner" class="checkout-reservation-banner">
+                            <p class="reservation-banner-note">Sipariş oluşturmak için önce masa rezervasyonu yapmalısınız.</p>
+                        </div>
+
+                        <!-- İletişim Bilgileri -->
+                        <div class="form-section-title">👤 Müşteri Bilgileri</div>
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label for="checkout-name">Ad Soyad</label>
+                                <input type="text" id="checkout-name" required placeholder="Ahmet Yılmaz">
+                            </div>
+                            <div class="form-group">
+                                <label for="checkout-phone">Telefon (11 Hane)</label>
+                                <input type="tel" id="checkout-phone" maxlength="11" pattern="[0-9]{11}" required placeholder="05XXXXXXXXX">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="checkout-notes">Şef Notu & Özel İstekler (Opsiyonel)</label>
+                            <input type="text" id="checkout-notes" placeholder="Alerjen, pişme derecesi, ekstralar...">
+                        </div>
+
+                        <!-- Ödeme Yöntemi -->
+                        <div class="form-section-title">💳 Ödeme Yöntemi</div>
+                        <div class="payment-methods-tabs">
+                            <button type="button" class="payment-tab-btn active" id="btn-pay-card" onclick="switchPaymentMethod('card', this)">
+                                💳 Kredi / Banka Kartı
+                            </button>
+                            <button type="button" class="payment-tab-btn" id="btn-pay-cash" onclick="switchPaymentMethod('cash', this)">
+                                💵 Masada Ödeme (Nakit / POS)
+                            </button>
+                        </div>
+                        <p class="demo-payment-note">🔒 Demo ödeme ekranıdır; gerçek bir tahsilat yapılmaz.</p>
+
+                        <!-- Kredi Kartı Bilgileri -->
+                        <div id="payment-card-details" class="card-details-box">
+                            <div class="form-group">
+                                <label for="card-holder">Kart Üzerindeki İsim</label>
+                                <input type="text" id="card-holder" placeholder="AHMET YILMAZ">
+                            </div>
+                            <div class="form-group">
+                                <label for="card-number">Kart Numarası</label>
+                                <input type="text" id="card-number" maxlength="19" placeholder="0000 0000 0000 0000" oninput="formatCardNumber(this)">
+                            </div>
+                            <div class="form-row-2">
+                                <div class="form-group">
+                                    <label for="card-exp">Son Kullanma (AA/YY)</label>
+                                    <input type="text" id="card-exp" maxlength="5" placeholder="AA/YY" oninput="formatCardExpiry(this)">
+                                </div>
+                                <div class="form-group">
+                                    <label for="card-cvv">Güvenlik Kodu (CVV)</label>
+                                    <input type="password" id="card-cvv" maxlength="3" pattern="[0-9]{3}" placeholder="123">
+                                </div>
+                            </div>
+                            <div class="security-badge-row">
+                                <span>🔒 256-Bit SSL Güvenli Ödeme</span>
+                                <span>🛡️ 3D Secure Doğrulama</span>
+                            </div>
+                        </div>
+
+                        <div id="payment-cash-details" class="cash-details-box hidden">
+                            <p>💵 Siparişiniz anında mutfağımıza iletilecektir. Ödemenizi masanızda nakit veya temassız POS cihazı ile kolayca gerçekleştirebilirsiniz.</p>
+                        </div>
+
+                        <div class="checkout-actions">
+                            <button type="submit" class="btn-complete-order" id="btn-complete-order">
+                                <span class="btn-order-text">Siparişi ve Ödemeyi Tamamla (<span id="btn-order-price">0 ₺</span>)</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- 3. ADIM: BAŞARILI SİPARİŞ MAKBUZU / ONAY EKRANI -->
+            <div id="checkout-success-container" class="checkout-success-view hidden">
+                <div class="success-icon-wrapper">✓</div>
+                <h3 class="success-title">Siparişiniz Başarıyla Alındı!</h3>
+                <p class="success-subtext">Ödemeniz onaylandı, şeflerimiz siparişinizi özenle hazırlamaya başladı.</p>
+
+                <div class="order-receipt-card" id="order-receipt-content">
+                    <!-- JS Makbuzu dinamik oluşturacak -->
+                </div>
+
+                <div class="success-actions">
+                    <button type="button" class="btn-continue-shopping" onclick="closeCartModal()">Menüye Dön</button>
+                    <button type="button" class="btn-view-orders" onclick="closeCartModal(); openOrdersModal();">📋 Onaylanmış Siparişlerimi Gör</button>
+                    <button type="button" class="btn-print-receipt" onclick="printReceipt()">🖨 Makbuzu Yazdır</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Onaylanmış Siparişlerim Modalı -->
+    <div id="orders-modal" class="modal hidden">
+        <div class="modal-content orders-modal-content">
+            <span class="close-btn" onclick="closeOrdersModal()">&times;</span>
+            <div class="checkout-header">
+                <div class="checkout-pre-title">YUS-HUB GASTRONOMİ</div>
+                <h2 class="checkout-main-title">Onaylanmış Siparişlerim</h2>
+                <div class="checkout-gold-divider">✦ ✦ ✦</div>
+            </div>
+            <div id="orders-list-container"></div>
+        </div>
+    </div>
+
+    <!-- Site İçi Onay (Confirm) Modalı -->
+    <div id="confirm-modal" class="modal hidden">
+        <div class="modal-content confirm-modal-content">
+            <h3>⚠️ Lütfen Onaylayın</h3>
+            <p id="confirm-message">Bu işlemi onaylıyor musunuz?</p>
+            <div class="confirm-actions">
+                <button type="button" class="btn-back" onclick="confirmCancel()">Vazgeç</button>
+                <button type="button" class="btn-submit" onclick="confirmOk()">Evet, Onayla</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Masa Limiti / İletişim Modalı -->
+    <div id="limit-modal" class="modal hidden">
+        <div class="modal-content confirm-modal-content">
+            <span class="close-btn" onclick="closeLimitModal()">&times;</span>
+            <h3>⚠️ Masa Limiti</h3>
+            <p id="limit-message">En fazla 2 masa rezerve edebilirsiniz. Daha fazla masa için lütfen iletişim hattımızdan bize ulaşın: 0555 111 22 33</p>
+            <div class="confirm-actions">
+                <button type="button" class="btn-back" onclick="closeLimitModal()">Kapat</button>
+                <button type="button" class="btn-go-contact" onclick="goToContact()">📩 İletişim Bölümüne Git</button>
+                <a href="tel:+905551112233" class="btn-call-contact">📞 Hemen Ara</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Site İçi Bildirimler (Toast) -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Yüzen Hızlı Sepet Butonu -->
+    <button id="floating-cart-btn" class="floating-cart-btn" onclick="openCartModal()" title="Sepeti ve Ödemeyi Aç">
+        <span class="floating-cart-icon">🛒</span>
+        <span class="floating-cart-text">Sepetim</span>
+        <span class="floating-cart-badge" id="floating-cart-count">0</span>
+    </button>
+
+    <!-- İletişim / Footer -->
+    <footer id="contact" class="footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>İletişim & Adres</h3>
+                <p><strong>Adres:</strong> Atatürk Bulvarı No: 142/A, Mersin</p>
+                <p><strong>E-posta:</strong> info@yushub.com</p>
+                <p><strong>Telefon:</strong> <a href="tel:+905551112233">+90 555 111 22 33</a></p>
+            </div>
+            <div class="footer-map">
+                <div class="footer-address-card">
+                    <svg class="footer-pin" viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="#f2c078" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M12 21s-7-5.1-7-11a7 7 0 0 1 14 0c0 5.9-7 11-7 11z"/>
+                        <circle cx="12" cy="10" r="2.6"/>
+                    </svg>
+                    <h4>YUS-HUB Gastronomi Dünyası</h4>
+                    <p>Atatürk Bulvarı No: 142/A, Mersin</p>
+                    <p class="footer-hours">🕐 Her gün 12:00 – 23:00</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
