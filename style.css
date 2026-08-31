@@ -2329,3 +2329,175 @@ body.modal-open {
 .footer-pin {
     filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
 }
+
+/* ========================================================
+   MOBİL UYUMLULUK DÜZELTMELERİ
+   ======================================================== */
+
+/* Sabit menü, başlıkların üstünü kapatmasın (çapa linkleri için) */
+section[id] {
+    scroll-margin-top: 110px;
+}
+
+/* Hamburger butonu — masaüstünde gizli */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 8px;
+    background: transparent;
+    border: 2px solid #8c321d;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: #8c321d;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* ---- Tablet ve altı: menü hamburgera dönüşür ---- */
+@media (max-width: 1100px) {
+    .navbar {
+        padding: 10px 16px;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .navbar nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        background: #f4ece1;
+        border-bottom: 2px solid #d8c3b0;
+        box-shadow: 0 12px 25px rgba(92, 53, 31, 0.25);
+        padding: 10px 16px 16px 16px;
+
+        /* kapalı durum */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        pointer-events: none;
+        transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+    }
+
+    .navbar nav.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    .navbar nav a,
+    .navbar .menu-nav-btn {
+        margin-left: 0;
+        padding: 12px 8px;
+        border-bottom: 1px dashed #d8c3b0;
+        font-size: 15px;
+    }
+
+    .navbar .nav-cart-btn {
+        margin-left: 0;
+        margin-top: 10px;
+        justify-content: center;
+        padding: 12px 18px;
+        font-size: 14.5px;
+    }
+}
+
+/* ---- Telefon ---- */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 8px 12px;
+    }
+
+    .navbar-logo-img {
+        height: 52px;
+        width: 52px;
+    }
+
+    .logo-text {
+        font-size: 22px;
+        letter-spacing: 1px;
+    }
+
+    .logo-subtext {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    section[id] {
+        scroll-margin-top: 80px;
+    }
+
+    /* Hero: mobil adres çubuğu sorununa karşı svh */
+    .hero {
+        height: 100svh;
+        min-height: 560px;
+    }
+
+    .main-booking-title {
+        font-size: 32px;
+    }
+
+    .floor-buttons {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .btn {
+        padding: 10px 26px;
+    }
+
+    .btn-title {
+        font-size: 15px;
+    }
+
+    .restaurant-map {
+        border-width: 4px;
+        border-radius: 12px;
+    }
+
+    .floor-indicator {
+        font-size: 10.5px;
+        padding: 4px 12px;
+        letter-spacing: 1px;
+        white-space: nowrap;
+    }
+
+    .map-header-overlay {
+        top: 8px;
+    }
+}
+
+/* ---- Dokunmatik ekranlar: hover olmadığı için
+        "Rezerve Et" butonları her zaman görünsün ---- */
+@media (hover: none) and (pointer: coarse) {
+    .table-btn {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1) translateY(0);
+    }
+
+    .table-hotspot {
+        border-color: rgba(242, 192, 120, 0.35);
+    }
+}

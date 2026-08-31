@@ -1168,3 +1168,38 @@ document.addEventListener('DOMContentLoaded', function () {
     renderOrdersList();
     startCountdown();
 });
+
+/* ========================================================
+   MOBİL MENÜ (HAMBURGER)
+   ======================================================== */
+function toggleMobileNav() {
+    const nav = document.getElementById('main-nav');
+    const toggle = document.getElementById('nav-toggle');
+    const isOpen = nav.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+}
+
+// Menüdeki bir linke/butona tıklanınca menüyü kapat
+document.addEventListener('DOMContentLoaded', function () {
+    const nav = document.getElementById('main-nav');
+    const toggle = document.getElementById('nav-toggle');
+    if (!nav || !toggle) return;
+
+    nav.addEventListener('click', function (e) {
+        if (e.target.closest('a') || e.target.closest('button')) {
+            nav.classList.remove('open');
+            toggle.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    // Menü dışına tıklanınca kapat
+    document.addEventListener('click', function (e) {
+        if (nav.classList.contains('open') && !e.target.closest('.navbar')) {
+            nav.classList.remove('open');
+            toggle.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+});
